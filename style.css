@@ -1,0 +1,108 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.boxes {
+  background-color: #12bdac;
+  height: 57vh;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #000;
+}
+.box {
+  border: 1px solid #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 3rem;
+  width: 7rem;
+  outline: none;
+}
+.circle {
+  position: relative;
+}
+.circle::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+}
+.cross {
+  position: relative;
+}
+.cross::before,
+.cross::after {
+  content: '';
+  display: block;
+  width: 50px;
+  position: absolute;
+  border: 3px solid #000;
+}
+.cross::before {
+  transform: rotate(45deg);
+}
+.cross::after {
+  transform: rotate(-45deg);
+}
+.looser {
+  background-color: #f66904;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+.winner {
+  background-color: #007769;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+button,
+input {
+  font-family: 'Raleway';
+}
+input[value='X'] {
+  font-size: 2.2rem;
+}
+button {
+  font-size: 2rem;
+  border: 1px solid #6eccc0;
+  background: #6eccc0;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 0 #000;
+  cursor: pointer;
+  transition: all linear 0.5s;
+}
+button:hover {
+  background: #0d5e53;
+  color: #fff;
+}
+#result {
+  font-size: 2rem;
+  transform: translateY(0);
+  transition: opacity linear 0.5s;
+  opacity: 0;
+}
+#result.show {
+  transform: translateY(-55vh);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 14px 0 #000;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
