@@ -71,6 +71,7 @@ function boxClicked(e) {
 
   if (answerArray.length + randomArray.length == 9) {
     result.textContent = 'The score is tied';
+    result.classList.add('show');
   }
 }
 for (let box of boxes) {
