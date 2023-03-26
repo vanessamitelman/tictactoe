@@ -91,7 +91,7 @@ button:hover {
   opacity: 0;
 }
 #result.show {
-  transform: translateY(-55vh);
+  transform: translateY(-35vh);
   background: #fff;
   padding: 1rem;
   border-radius: 10px;
